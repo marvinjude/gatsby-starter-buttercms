@@ -60,6 +60,7 @@ const IndexPage = ({ data }) => {
       >
         {home.customer_logos.map(({ logo_image }) => (
           <img
+            alt="customer logo"
             key={logo_image}
             style={{ width: `200px`, borderRadius: `10px` }}
             src={logo_image}
