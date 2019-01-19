@@ -12,6 +12,35 @@ Kick off your Gatsby + ButterCMS with this default boilerplate. This Project Cov
     npx gatsby new my-default-starter https://github.com/butterCMS/gatsby-starter-buttercms
     ```
 
+2. **Create Content**
+   
+   For this template to work, you have to create your content on ButterCMS
+   as stated [here](https://buttercms.com/docs/api-client/gatsby)
+
+2. **Configuration**
+    You need to add the API token from your dashboard, along with associated
+    page types, content fileds, and pages.
+
+    `gatsby-config-js`
+
+    ```js
+     {
+      resolve: `gatsby-source-buttercms`,
+      options: {
+        authToken: `<API_TOKEN>`,
+        // Optional. Returns values for the supplied content field keys.
+        contentFields: {
+          keys: [`faq_items`, `faq_headline`],
+          // Optional. Set to 1 to enable test mode for viewing draft content.
+          test: 0,
+        },
+        // Optional. Array of page slugs.
+        pages: [`homepage`],
+        // Optional. Array of page types.
+        pageTypes: [`customer_case_study`],
+      },
+    },
+    ```
 
 1.  **Start developing.**
 
